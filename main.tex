@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[subpreambles=true]{standalone}
+
+\usepackage{verbatim}
+
+\begin{document}
+
+\title{Final Report}
+\date{}
+
+\section*{Introduction}
+
+\section*{Background}
+
+\include{Tech_Employed}
+
+
+\include{Strategy_Games}
+
+\include{Group_Management}
+
+\subsection*{Team Members Roles}
+
+\subsection*{Development Approach}
+
+\section*{Development}
+\subsection*{Front End}
+\subsection*{Back End}
+\subsection*{Map Generation}
+
+Initially map is generated randomly. Tiles of any type could be placed anywhere.
+
+Procedural generation is then looked into. Introduced the importance of noise functions
+
+
+Also found map generation through the use of voronoli diagrams using polygons. Several implementations were found and they were looked into as reference. Altered the method slightly in order to fit in with the format of the game world. 
+
+It introduces centroids into the map and determine the property of each tile based on the distance with each centroids.
+
+The method is as follows:
+
+Decide on the number and property of the points
+
+Generate points within the range of the map
+
+Calculate the distance between each tiles and the points
+
+
+
+
+Initially the uniform random function is used to test the method. 
+
+Other random function could be used if necessary
+
+Euclidean distance is used for comparison of distance
+
+
+Initially testing only included the generation of regions for tiles, i.e areas of dessert, grassland, and rock
+
+Need to extend the method further to include mountain area and/ or water
+
+
+
+
+
+
+
+
+\section*{Evaluation}
+\subsection*{Front End}
+\subsection*{Back End}
+\subsection*{Map Generation}
+
+Takes the data in json format from the backend- use the data to find the range of q and r determined from the backend to generate a map
+
+Centroids are generated within the range of the map using an uniform random function. Each one will be of a specific type, i.e grass, stone, etc. 
+
+Each tile of the map is compared against each generated centroids in terms of distance, the type of a tile is determined by the proximity with the centroids. 
+
+Depending on the type that have been assigned, further random functions are used to decide if the tile will contain resources of the game. 
+
+The data is then condensed and feeds back to the backend for processing. 
+
+
+
+\section*{Conclusion}
+
+\end{document}
